@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1350px) {
+    header .header-top .header-top-left {
+        display: none;
+    }
+
+    header .header-top .header-top-right {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    header .header-main .logo {
+        padding: 0 100px;
+    }
+
+    header .header-main .menu-icon {
+        display: flex;
+    }
+
+    header .header-main .links {
+        display: none;
+    }
+
+    header .header-main .help {
+        display: none;
+    }
+}

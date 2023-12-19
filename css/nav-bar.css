@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box  ;
+}
+
+header {
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(90px);
+    
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.stick-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header .header-top {
+    height: 25px;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid grey;
+}
+
+header .header-top .header-top-left {
+    height: 100%;
+    width: 540px;
+    text-align: center;
+    cursor: pointer;
+}
+
+header .header-top .header-top-right {
+    height: 100%;
+    width: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 0;
+    font-size: 15px;
+}
+
+header .header-top .header-top-right a {
+    text-decoration: none;
+    margin-left: 12px;
+    color: black;
+}
+
+header .header-main .menu-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-main .menu-icon button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 50%;
+    width: 25%;
+}
+
+header .header-main {
+    height: 100px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+
+header .header-main .logo {
+    width: 15%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header .header-main .logo h2 {
+    color: white;
+}
+
+header .header-main .logo img {
+    height: 100%;
+}
+
+header .header-main .links {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    margin-left: 150px;
+}
+
+header .header-main .links li {
+    height: 25px;
+    list-style: none;
+    padding-top: 8px;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    cursor: default;
+}
+
+header .header-main .links li span {
+    transition: .6s;
+}
+
+header .header-main .links li .content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    animation: animate 300ms ease-in-out forwards;
+    transform-origin: top center;
+    background-color: #ddd;
+    border-radius: 15px;
+    width: 200px;
+    padding: 10px 5px 10px 5px;
+}
+
+header .header-main .links li .alt-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    animation: animate 300ms ease-in-out forwards;
+    transform-origin: top center;
+    background-color: #ddd;
+    border-radius: 15px;
+    width: 500px;
+    padding: 10px 5px 20px 5px;
+}
+
+header .header-main .links li .content a {
+    color: brown;
+    margin-left: 10px;
+    padding: 10px 5px 10px 5px;
+    text-decoration: none;
+}
+
+header .header-main .links li .alt-content .section h2 {
+    color: black;
+    padding-top: 15px;
+}
+
+header .header-main .links li .alt-content .section a {
+    color: brown;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+header .header-main .links li .alt-content .section {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes animate {
+    0% {
+        transform: scaleY(0);
+    }
+
+    80% {
+        transform: scaleY(1.1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+header .header-main .links li:hover span {
+    text-shadow: 0 0 8px yellow;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+header .header-main .links li:hover .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+header .header-main .links li:hover .alt-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*header .header-main .links li::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: .2s;
+    border-radius: 25px;
+}
+
+header .header-main .links li:hover {
+    color: black;
+}
+
+header .header-main .links li:hover::before {
+    box-shadow: 0px 1px 5px 0px black;
+    background-color: white;
+    transform: scale(1.2);
+}*/
+
+header .header-main .help {
+    height: 60%;
+    padding: 0 20px;
+    background-color: #3092dd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+header .header-main .help .contact {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.page-contents .sideNav {
+    height: 50vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.9s;
+    margin-top: 125px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-contents .sideNav .dropdown {
+    display: block;
+    color: #818181;
+    border: none;
+    padding: 6px 16px 6px 16px;
+    background: none;
+}
+
+.page-contents .sideNav .dropdown:hover {
+    color: #f1f1f1;
+}
+
+.page-contents .sideNav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 88px;
+    font-size: 36px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.page-contents .sideNav .active {
+    background-color: green;
+    color: white;
+}
+
+.page-contents .sideNav .dropdown-container {
+    display: none;
+    flex-direction: column;
+    padding-left: 8px;
+    margin-bottom: 15px;
+    animation: anim 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.page-contents .sideNav .alt-dropdown-container {
+    display: none;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    animation: anim 300ms ease-in-out forwards;
+    transform-origin: top center;
+    margin-bottom: 15px;
+}
+
+.page-contents .sideNav .alt-dropdown-container .alt-section h2 {
+    color: brown;
+}
+
+.page-contents .sideNav .alt-dropdown-container .alt-section a {
+    margin: 10px 0;
+}
+
+.page-contents .sideNav .alt-dropdown-container .alt-section a:hover {
+    transition: color 0.6s ease;
+    color: yellow;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}
+
+.page-contents .sideNav a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.page-contents .sideNav .dropdown-container a:hover {
+    transition: color 0.6s ease;
+    color: yellow;
+}
+
+.page-contents .sideNav .dropdown .fa-caret-down {
+    float: right;
+    padding-left: 15px;
+}
