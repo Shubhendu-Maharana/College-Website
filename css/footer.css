@@ -1,0 +1,122 @@
+footer {
+    height: 500px;
+    background: url("");
+    background-color: #353131;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .footer-content {
+    height: 90%;
+    width: 90%;
+    border-radius: 25px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer .footer-content .mail-content {
+    border: 2px solid white;
+    border-radius: 40px;
+    overflow: hidden;
+    height: 50px;
+    position: relative;
+    width: 50%;
+} 
+
+footer .footer-content .mail-content input {
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    outline: none;
+    color: white;
+}
+
+footer .footer-content .mail-content input::placeholder {
+    color: white;
+}
+
+footer .footer-content .mail-content button {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    right: 0;
+    background: white;
+    font-size: 20px;
+    color: #660746;
+    font-weight: bold;
+    border: none;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    cursor: pointer;
+}
+
+footer .footer-content .footer-links {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 50%;
+}
+
+footer .footer-content .footer-links .links {
+    height: 100%;
+    width: 30%;
+    padding: 10px 0;
+}
+
+footer .footer-content .footer-links .links h2 {
+    color: white;
+    font-size: 30px;
+    cursor: default;
+}
+
+footer .footer-content .footer-links .links a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 7px 0;
+}
+
+footer .footer-content .hr-line {
+    border: 2px solid grey;
+    width: 70%;
+}
+
+footer .footer-contacts {
+    width: 70%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+footer .footer-contacts .footer-icons {
+    display: flex;
+    justify-content: space-around;
+}
+footer .footer-contacts .footer-icons a {
+    margin-left: 50px;
+}
+
+footer .footer-image {
+    height: 70%;
+    width: 20%;
+    position: absolute;
+    top: 20px;
+    left:20px;
+    overflow: hidden;
+}
+
+footer .footer-image img {
+    height: 100%;
+    width: 120%;
+}

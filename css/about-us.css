@@ -18,7 +18,7 @@
     width: 30%;
     border-radius: 20px;
     padding: 18px 18px 18px 25px;
-    box-shadow: -5px 5px 10px grey;
+    box-shadow: -5px 5px 10px black;
 }
 
 .page-contents .about-us-content .text-box h1 {
@@ -27,6 +27,7 @@
     font-size: 50px;
     display: inline-block;
     position: relative;
+    cursor: default;
 }
 
 .page-contents .about-us-content .text-box p {
@@ -56,10 +57,16 @@
     width: 30%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: -5px 5px 10px grey;
+    box-shadow: -5px 5px 10px black;
 }
 
 .page-contents .about-us-content .img-box img {
     height: 100%;
     width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .anim {
+        animation: wipe-enter 1s 1;
+    }
 }
