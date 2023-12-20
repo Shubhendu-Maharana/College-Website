@@ -64,9 +64,3 @@
     height: 100%;
     width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-    .anim {
-        animation: wipe-enter 1s 1;
-    }
-}
