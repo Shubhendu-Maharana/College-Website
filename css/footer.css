@@ -118,8 +118,7 @@ footer .footer-icons a i {
 }
 
 footer .footer-icons a i:hover {
-    text-shadow: 0 0 10px cyan;
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
     transform: scale(1.3);
 }
 

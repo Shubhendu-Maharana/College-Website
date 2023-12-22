@@ -3,63 +3,71 @@
     width: 100%;
 }
 
-.page-contents .cultural-content {
-    height: 100%;
-    width: 100%;
-    padding: 100px 0;
-    background-color: bisque;
+.page-contents .container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.page-contents .container span {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.page-contents .container .boxes {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.page-contents .cultural-content .text-box {
-    background-color: rgb(251, 218, 218);
-    width: 30%;
+.page-contents .container .boxes .box {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin: 50px 0;
+    background-color: wheat;
     border-radius: 20px;
-    padding: 18px 18px 18px 25px;
-    box-shadow: -5px 5px 10px black;
+    box-shadow: 5px 5px 10px black;
+    transition: all .2s ease;
 }
 
-.page-contents .cultural-content .text-box h1 {
-    text-align: left;
+.page-contents .container .boxes .box:hover {
+    box-shadow: 8px 8px 10px black;
+}
+
+.page-contents .container .boxes .box .image {
+    height: 100%;
+    width: 100%;
+}
+
+.page-contents .container .boxes .box .image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px black;
+    transition: all .4s ease;
+}
+
+.page-contents .container .boxes .box .image img:hover {
+    transform: scale(1.05);
+}
+
+.page-contents .container .boxes .box .text {
+    padding: 20px 10px;
+}
+
+.page-contents .container .boxes .box .text h2 {
     text-transform: uppercase;
-    font-size: 50px;
-    display: inline-block;
-    position: relative;
-    cursor: default;
 }
 
-.page-contents .cultural-content .text-box p {
-    padding-top: 30px;
+.page-contents .container .boxes .box .text p {
+    padding: 15px 0;
 }
 
-.page-contents .cultural-content .text-box h1::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    transform-origin: right;
-    transition: transform 0.25s ease-in-out;
-}
 
-.page-contents .cultural-content .text-box h1:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.page-contents .cultural-content .img-box {
-    height: 100%;
-    width: 30%;
-    border-radius: 20px;
-    box-shadow: -5px 5px 10px black;
-}
-
-.page-contents .cultural-content .img-box img {
-    height: 100%;
-    width: 100%;
-}
