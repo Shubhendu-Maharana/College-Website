@@ -1,11 +1,10 @@
 .page-contents .slideshow {
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 .page-contents .slideshow .slides {
-    height: 100%;
-    width: 100%;
     display: none;
 }
 

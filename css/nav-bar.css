@@ -46,13 +46,13 @@ header .header-top .header-top-right {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-left: 0;
+    padding: 2px 10px;
     font-size: 15px;
 }
 
 header .header-top .header-top-right a {
     text-decoration: none;
-    margin-left: 12px;
+    margin-left: 20px;
     color: black;
 }
 
@@ -160,6 +160,11 @@ header .header-main .links li .content a {
     text-decoration: none;
 }
 
+header .header-main .links li .content a:hover, header .header-main .links li .alt-content .section a:hover {
+    color: red;
+    transition: all 0.5s ease-in-out;
+}
+
 header .header-main .links li .alt-content .section h2 {
     color: black;
     padding-top: 15px;
@@ -181,8 +186,12 @@ header .header-main .links li .alt-content .section {
         transform: scaleY(0);
     }
 
-    80% {
+    40% {
         transform: scaleY(1.1);
+    }
+
+    50% {
+        transform: scaleY(1.2);
     }
 
     100% {
@@ -239,6 +248,13 @@ header .header-main .help {
     justify-content: center;
     border-radius: 50px;
     margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+header .header-main .help:hover {
+    background-color: white;
+    color: #3092dd;
+    transform: scale(1.1);
 }
 
 header .header-main .help .contact {

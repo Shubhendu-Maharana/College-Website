@@ -13,6 +13,6 @@ function showSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     slides[slideIndex - 1].classList.add("fade");
-    setTimeout(showSlides, 6000); // Change slide every 3 seconds
+    setTimeout(showSlides, 4000); // Change slide every 4 seconds
 }
 document.addEventListener("DOMContentLoaded", showSlides);
