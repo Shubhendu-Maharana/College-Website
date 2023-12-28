@@ -252,8 +252,6 @@ header .header-main .help {
 }
 
 header .header-main .help:hover {
-    background-color: wheat;
-    color: #3092dd;
     transform: scale(1.1);
 }
 
