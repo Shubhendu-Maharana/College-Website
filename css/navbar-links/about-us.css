@@ -7,7 +7,7 @@
     height: 100%;
     width: 100%;
     padding: 180px 0;
-    background: url("/images/background.jpg") center / cover no-repeat;
+    background: url("../images/background.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
