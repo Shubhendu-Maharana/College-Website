@@ -6,22 +6,34 @@
 .page-contents .infrastructure-content {
     height: 100%;
     width: 100%;
-    padding: 100px 0;
-    background-color: bisque;
+    padding: 180px 0;
+    background: url("/images/background.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .page-contents .infrastructure-content .text-box {
-    background-color: rgb(251, 218, 218);
-    width: 30%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    width: 80%;
     border-radius: 20px;
     padding: 18px 18px 18px 25px;
     box-shadow: -5px 5px 10px black;
+    animation: reveal 1s ease;
+}
+
+@keyframes reveal {
+    0% {
+      transform: translate(0, 50%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
 }
 
 .page-contents .infrastructure-content .text-box h1 {
+    font-family: Neuton, sans-serif;
     text-align: left;
     text-transform: uppercase;
     font-size: 50px;
@@ -31,6 +43,8 @@
 }
 
 .page-contents .infrastructure-content .text-box p {
+    font-family: Neuton, sans-serif;
+    font-size: 25px;
     padding-top: 30px;
 }
 
@@ -50,17 +64,4 @@
 .page-contents .infrastructure-content .text-box h1:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-}
-
-.page-contents .infrastructure-content .img-box {
-    height: 100%;
-    width: 30%;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: -5px 5px 10px black;
-}
-
-.page-contents .infrastructure-content .img-box img {
-    height: 100%;
-    width: 100%;
 }
