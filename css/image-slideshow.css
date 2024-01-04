@@ -8,7 +8,7 @@
     display: none;
 }
 
-.page-contents .slideshow img {
+.page-contents .slideshow .slides img {
     height: 100%;
     width: 100%;
 }
