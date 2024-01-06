@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav-bar.css">
     <link rel="stylesheet" href="./css/responsive.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/image-slideshow.css">
+    <link rel="stylesheet" href="./css//navbar-links/admin.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
     <title>RMIT GROUP OF INSTITUTION</title>
 </head>
 
@@ -37,18 +37,18 @@
         </div>
 
         <div class="header-main">
-            <a href="./index.html" class="logo" style="text-decoration: none;">
+            <a href="./index.html" class="logo">
                 <img src="./images/logo.png" alt="">
                 <h2>RMIT</h2>
             </a>
             <ul class="links">
                 <li><span>ABOUT</span>
                     <div class="content">
-                        <a href="./navbar-links/about-us.html">About us</a>
-                        <a href="./navbar-links/object-mission.html">Object, Mission</a>
-                        <a href="./navbar-links/infrastructure.html">Infrastructure</a>
-                        <a href="./navbar-links/facilities.html">Facilities</a>
-                        <a href="./navbar-links/affiliation.html">Affiliation</a>
+                        <a href="about-us.html">About us</a>
+                        <a href="object-mission.html">Object, Mission</a>
+                        <a href="infrastructure.html">Infrastructure</a>
+                        <a href="facilities.html">Facilities</a>
+                        <a href="affiliation.html">Affiliation</a>
                     </div>
                 </li>
                 <li><span>PROGRAMS</span>
@@ -104,14 +104,14 @@
                 <li><span>ADMINISTRATION</span>
                     <div class="content">
                         <a href="">Administration</a>
-                        <a href="./navbar-links/staff-info.html">Staff Information</a>
+                        <a href="">Staff Information</a>
                     </div>
                 </li>
                 <li><span>CAMPUS LIFE</span>
                     <div class="content">
                         <a href="">Overview</a>
-                        <a href="./navbar-links/cultural.html">Cultural & Cosmopolitian</a>
-                        <a href="./navbar-links/sports.html">Sports & Advanture</a>
+                        <a href="cultural.html">Cultural & Cosmopolitian</a>
+                        <a href="sports.html">Sports & Advanture</a>
                         <a href="">Convocations</a>
                     </div>
                 </li>
@@ -139,18 +139,39 @@
         </div>
     </header>
 
+
     <section class="page-contents">
+
+        <div class="staff-info">
+            <h2>Add Staff Details</h2>
+
+            <form>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required> <br>
+
+                <label for="age">Age: </label>
+                <input type="number" name="age" id="age" min="18" required> <br>
+
+                <label for="qual">Qualification: </label>
+                <input type="text" name="qual" id="qual" required> <br>
+
+                <!-- <label for="pfp">Profile Picture: </label>
+                <input type="file" name="pfp" id="pfp" accept="image/*" required> <br> -->
+
+                <input type="submit" id="submitBtn">
+            </form>
+        </div>
 
         <div class="sideNav" id="mySideNav">
             <button class="dropdown">ABOUT
                 <i class="fa-solid fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="./navbar-links/about-us.html">About us</a>
-                <a href="./navbar-links/object-mission.html">Object, Mission</a>
-                <a href="./navbar-links/infrastructure.html">Infrastructure</a>
-                <a href="./navbar-links/facilities.html">Facilities</a>
-                <a href="./navbar-links/affiliation.html">Affiliation</a>
+                <a href="about-us.html">About us</a>
+                <a href="object-mission.html">Object, Mission</a>
+                <a href="infrastructure.html">Infrastructure</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="affiliation.html">Affiliation</a>
             </div>
 
             <button class="dropdown">PROGRAMS
@@ -217,7 +238,7 @@
             </button>
             <div class="dropdown-container">
                 <a href="">Administration</a>
-                <a href="./navbar-links/staff-info.html">Staff Information</a>
+                <a href="">Staff Information</a>
             </div>
 
 
@@ -226,8 +247,8 @@
             </button>
             <div class="dropdown-container">
                 <a href="">Overview</a>
-                <a href="./navbar-links/cultural.html">Cultural & Cosmopolitian</a>
-                <a href="./navbar-links/sports.html">Sports & Advanture</a>
+                <a href="cultural.html">Cultural & Cosmopolitian</a>
+                <a href="sports.html">Sports & Advanture</a>
                 <a href="">Convocations</a>
             </div>
 
@@ -242,25 +263,7 @@
             </div>
 
         </div>
-
-        <!-- Image slideshow -->
-        <div class="slideshow">
-            <div class="slides">
-                <img src="./images/about-us-bg.jpg">
-            </div>
-
-            <div class="slides">
-                <img src="./images/background.jpg">
-            </div>
-
-            <div class="slides">
-                <img src="./images/about-us-bg.jpg">
-            </div>
-        </div>
     </section>
-
-    <script src="./javascript/image-slideshow.js"></script>
-    <script src="./javascript/side-nav-bar.js"></script>
 
     <footer>
         <div class="footer-content">
@@ -284,8 +287,8 @@
 
                     <a href=""><i class="fa-solid fa-angles-right"></i> Hostels</a>
                     <a href=""><i class="fa-solid fa-angles-right"></i> Transport</a>
-                    <a href="./navbar-links/sports.html"><i class="fa-solid fa-angles-right"></i> Sports</a>
-                    <a href="./navbar-links/cultural.html"><i class="fa-solid fa-angles-right"></i> Cultural Activities</a>
+                    <a href="sports.html"><i class="fa-solid fa-angles-right"></i> Sports</a>
+                    <a href="cultural.html"><i class="fa-solid fa-angles-right"></i> Cultural Activities</a>
                 </div>
 
                 <div class="links">
@@ -316,7 +319,26 @@
         <div class="footer-image">
             <img src="./images/footer-image.jpg">
         </div>
-        </footer>
+    </footer>
+
+    <script src="./javascript/side-nav-bar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".page-contents").on("submit", ".staff-info form", function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "./server/staff_store.php",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        alert(response);
+                        $(this).trigger("reset");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

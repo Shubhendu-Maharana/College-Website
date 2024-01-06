@@ -1,0 +1,67 @@
+.page-contents {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("background.jpg") center / cover no-repeat;
+}
+
+.page-contents .staff-info {
+    width: 50%;
+    margin-top: 8%;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.page-contents .staff-info h2 {
+    font-size: 30px;
+}
+
+.page-contents .staff-info form {
+    font-size: 20px;
+}
+
+.page-contents .staff-info form label, input {
+    margin: 10px;
+}
+
+.page-contents .staff-info form input {
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 1s ease;
+}
+
+.page-contents .staff-info form input:focus {
+    background-color: white;
+}
+
+.page-contents .staff-info form #submitBtn {
+    border: 3px solid wheat;
+    outline: none;
+    height: auto;
+    width: 50%;
+    font-size: 22px;
+    margin-left: 25%;
+    padding: 5px 10px;
+    border-radius: 12px;
+    background-color: rgba(0, 255, 0, 0.4);
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.page-contents .staff-info form #submitBtn:hover {
+    transform: scale(1.1);
+}
