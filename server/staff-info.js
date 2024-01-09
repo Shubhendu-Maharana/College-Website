@@ -15,6 +15,7 @@ fetch('/college-site/server/bca_staff_fetch.php')
         data.forEach(element => {
             const card = document.createElement('div');
             card.className = 'card';
+            card.innerHTML = `<img src="" alt="Profile Picture">`
 
             const info = document.createElement('div');
             info.className = 'info';
@@ -47,12 +48,13 @@ fetch('/college-site/server/diploma_staff_fetch.php')
         data.forEach(element => {
             const card = document.createElement('div');
             card.className = 'card';
+            card.innerHTML = `<img src="" alt="Profile Picture">`
 
             const info = document.createElement('div');
             info.className = 'info';
 
             info.innerHTML = `
-                <p>${element.name}</p>
+                <p>Name: ${element.name}</p>
                 <p>Age: ${element.age}</p>
                 <p>Qualification: ${element.qual}</p>
             `

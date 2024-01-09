@@ -39,9 +39,9 @@
     overflow: hidden;  
 }
 
-.page-contents .dept .cards .card img {
-    height: 100%;
-    width: 25%;
+.page-contents .dept .cards img {
+    height: auto;
+    max-width: 30%;
 }
 
 .page-contents .dept .cards .card .info {

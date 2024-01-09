@@ -1,11 +1,13 @@
 .page-contents .slideshow {
-    height: 100vh;
+    height: 50%;
     width: 100%;
     overflow: hidden;
 }
 
 .page-contents .slideshow .slides {
     display: none;
+    height: 100%;
+    width: 100%;
 }
 
 .page-contents .slideshow .slides img {

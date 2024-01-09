@@ -2,57 +2,54 @@
 
 include 'config.php';
 
-$conn = new mysqli($servername, $username, $password, $database);
-
-if($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
 // //Handle image upload
-// $targetDir = "./images/";
-// $targetFile = $targetDir . $name . "." . pathinfo($_FILES["pfp"]["name"], PATHINFO_EXTENSION);
+// $targetFile = $_FILES['picture']['name'];
+// $targetDir = "upload/".$targetFile;
 // $upload = 1;
 // $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
+$name = $_POST["name"];
+$age = $_POST["age"];
+$qual = $_POST["qual"];
 
-
-// //Check if file is already exists
-// if (file_exists($targetFile)) {
-//     echo "Sorry, file already exists.";
+// // Check if the file is an image
+// $check = getimagesize($_FILES["picture"]["tmp_name"]);
+// if ($check === false) {
+//     echo "File is not an image.";
 //     $upload = 0;
 // }
 
 // //Check file size
-// if ($_FILES["pfp"]["size"] > 50000) {
+// if ($_FILES["picture"]["size"] > 50000) {
 //     echo "Sorry, your file is too large.";
 //     $upload = 0;
 // }
 
+// // Allow only certain file formats
+// $allowedFormats = array("jpg", "jpeg", "png", "gif");
+// if (!in_array($imageFileType, $allowedFormats)) {
+//     echo "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
+//     $upload = 0;
+// }
 
-
-// //Check if any error occured
+// // Check if $uploadOk is set to 0 by an error
 // if ($upload == 0) {
-//     echo "Sorry, your file is not uploaded.";
+//     echo "Sorry, your file was not uploaded.";
+// // If everything is ok, try to upload file and insert data into the database
 // } else {
-//     //Upload file
-//     if (move_uploaded_file($_FILES["pfp"]["tmp_name"], $targetFile)) {
-//         $pfpFileName = $name . "." . $imageFileType;
-//         $sql = "INSERT INTO staff_info (name, age, qualification, pfp) VALUES ($name, $age, $qual, $pfpFileName)";
+//     if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+//         // Insert data into the database
+//         $sql = "INSERT INTO people (name, age, qualification, profile_picture) VALUES ('$name', $age, '$qualification', '$target_file')";
 
 //         if ($conn->query($sql) === TRUE) {
-//             echo "Data stored successfully";
+//             echo "Data uploaded successfully.";
 //         } else {
-//             echo "ERROR: " . $sql . "<br>" . $conn->error;
+//             echo "Error: " . $sql . "<br>" . $conn->error;
 //         }
 //     } else {
 //         echo "Sorry, there was an error uploading your file.";
 //     }
 // }
-
-$name = $_POST["name"];
-$age = $_POST["age"];
-$qual = $_POST["qual"];
 
 $sql = "INSERT INTO staff_info (name, age, qualification) VALUES ('$name', $age, '$qual')";
 
@@ -63,3 +60,5 @@ if($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+?>

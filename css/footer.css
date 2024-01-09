@@ -1,6 +1,6 @@
 footer {
     height: 500px;
-    background: url("");
+    width: 100%;
     background-color: rgb(134, 45, 45);
     position: relative;
     display: flex;
@@ -108,6 +108,7 @@ footer .footer-contacts .footer-icons {
     display: flex;
     justify-content: space-around;
 }
+
 footer .footer-contacts .footer-icons a {
     margin-left: 30px;
     font-size: 25px;
@@ -130,16 +131,54 @@ footer .footer-contacts .footer-copyright {
 }
 
 footer .footer-image {
-    height: 70%;
-    width: 20%;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
     position: absolute;
     top: 20px;
-    left:20px;
-    overflow: hidden;
-    box-shadow: 10px 10px 15px;
+    left: 20px;
 }
 
 footer .footer-image img {
     height: 100%;
-    width: 120%;
+    width: 100%;
+    box-shadow: 10px 10px 15px;
+}
+
+@media screen and (max-width: 1500px) {
+    footer .footer-image {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    footer .footer-contacts .footer-copyright {
+        font-size: 12px;
+    }
+
+    footer .footer-contacts .footer-icons a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    footer .footer-contacts .footer-copyright {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    footer .footer-image {
+        max-width: 200px;
+    }
+
+    footer .footer-content .footer-links {
+        padding: 0 20px;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    footer .footer-content .footer-links .links h2 {
+        font-size: 20px;
+    }
 }
