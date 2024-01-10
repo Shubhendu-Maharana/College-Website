@@ -1,7 +1,63 @@
 .page-contents .slideshow {
-    height: 50%;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
+    background: url("../admin/background.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-contents .slideshow .banner {
+    margin-top: 126px;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: white;
+}
+
+.page-contents .slideshow .banner h1 {
+    font-size: 152px;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1));
+}
+
+.page-contents .slideshow .banner span {
+    font-size: 100px;
+    font-weight: 640;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1));
+}
+
+.page-contents .slideshow .banner .links {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+}
+
+.page-contents .slideshow .banner .links a {
+    background-color: #98002e;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .5s ease;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+}
+
+.page-contents .slideshow .banner .links a:hover {
+    color: #98002e;
+    border: 2px solid #98002e;
+    background-color: white;
+    transform: scale(1) translate(0, -5px);
 }
 
 .page-contents .slideshow .slides {

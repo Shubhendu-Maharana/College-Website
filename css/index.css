@@ -1,4 +1,120 @@
-.page-contents {
+main .box-1 {
+    background-image: url("../images/content_area_pattern_triangle.svg");
+    background-color: rgba(145, 0, 44, .9);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .box-1 .text {
+    width: 70%;
+    text-align: center;
+
+}
+
+main .box-1 h2 {
+    color: #fdb714;
+    padding-bottom: 45px;
+    font-size: 40px;
+    text-transform: uppercase;
+
+}
+
+main .box-1 p {
+    color: white;
+    font-size: 20px;
+}
+
+main .box-2 {
+    padding: 30px 20px;
+}
+
+main .box-2 h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 45px;
+}
+
+main .box-2 h1::after {
+    margin: 30px auto;
+    content: "";
+    display: block;
+    height: 3px;
+    width: 140px;
+    background-color: #fdb714;
+}
+
+main .box-2 {
+    padding: 20px;
+}
+
+main .box-2 .cards {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 70px 150px;
+}
+
+main .box-2 .cards .card {
+    width: 300px;
+    background-color: wheat;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+main .box-2 .cards .card:hover {
+    box-shadow: 10px 10px 14px -4px rgba(0, 0, 0, 0.62);
+    transform: scale(1.001) translate(-3px, -3px);
+}
+
+main .box-2 .cards .card .image {
+    height: 250px;
+    width: 100%;
+    border-bottom: 6px solid #98002e;
+}
+
+main .box-2 .cards .card .image img {
     height: 100%;
     width: 100%;
+}
+
+main .box-2 .cards .card .info {
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+main .box-2 .cards .card .info h2 {
+    font-size: 34px;
+    margin: 0 0 15px;
+    color: #98002e;
+}
+
+main .box-2 .cards .card .info p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main .box-2 .cards .card .info a {
+    margin: 30px 0 0;
+    background-color: #98002e;
+    padding: 10px 20px 14px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    color: white;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+main .box-2 .cards .card .info a:hover {
+    color: #98002e;
+    border: 2px solid #98002e;
+    background-color: wheat;
 }
