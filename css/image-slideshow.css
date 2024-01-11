@@ -14,17 +14,44 @@
     line-height: 1;
     text-transform: uppercase;
     color: white;
+    cursor: default;
 }
 
 .page-contents .slideshow .banner h1 {
     font-size: 152px;
-    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1));
+    background: linear-gradient(to right,
+            #7953cd 20%,
+            #00affa 30%,
+            #0190cd 70%,
+            #764ada 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite forwards;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
 }
 
 .page-contents .slideshow .banner span {
     font-size: 100px;
     font-weight: 640;
-    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+    background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite forwards;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .page-contents .slideshow .banner .links {
@@ -79,6 +106,7 @@
     from {
         opacity: .4;
     }
+
     to {
         opacity: 1;
     }

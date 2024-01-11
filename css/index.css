@@ -54,7 +54,7 @@ main .box-2 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 70px 150px;
+    gap: 70px 100px;
 }
 
 main .box-2 .cards .card {
@@ -110,11 +110,59 @@ main .box-2 .cards .card .info a {
     border-radius: 20px;
     color: white;
     transition: all .5s ease;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 main .box-2 .cards .card .info a:hover {
     color: #98002e;
     border: 2px solid #98002e;
     background-color: wheat;
+}
+
+main .box-3 .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+main .box-3 .top h2 {
+    text-align: center;
+    font-size: 58px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 50px 0;
+}
+
+main .box-3 .top .links {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+main .box-3 .top .links a {
+    background-color: #98002e;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+}
+
+main .box-3 .top .links a:hover {
+    color: #98002e;
+    border: 2px solid #98002e;
+    background-color: white;
+}
+
+main .box-3 .bottom img {
+    height: auto;
+    width: 100%;
 }
