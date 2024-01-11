@@ -76,3 +76,61 @@
         display: none;
     }
 }
+
+.white-bg {
+    background-color: #fff;
+}
+
+.magenta-bg {
+    background-color: #98002e;
+}
+
+.magenta-color {
+    color: #98002e;
+}
+
+.orange-color {
+    color: #fdb714;
+}
+
+.white-color {
+    color: white;
+}
+
+main .box {
+    height: 500px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .box .image {
+    width: 30%;
+    border-radius: 19px;
+    overflow: hidden;
+}
+
+main .box .image:hover img {
+    transform: scale(1.05);
+}
+
+main .box .image img {
+    height: auto;
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+
+main .box .text {
+    width: 50%;
+}
+
+main .box h2 {
+    padding-bottom: 45px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+main .box p {
+    font-size: 20px;
+}
