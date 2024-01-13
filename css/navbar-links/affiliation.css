@@ -3,69 +3,149 @@
     width: 100%;
 }
 
-.page-contents .affiliation-content {
-    height: 100%;
+.page-contents .front-box {
+    height: 100vh;
     width: 100%;
-    padding: 180px 0;
-    background: url("background.jpg") center / cover no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-contents .front-box .banner {
+    margin-top: 126px;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: white;
+    cursor: default;
+    position: absolute;
+}
+
+.page-contents .front-box .banner h1 {
+    font-size: 152px;
+    background: linear-gradient(to right,
+            grey 20%,
+            white 30%,
+            white 70%,
+            grey 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite forwards;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+}
+
+/* .page-contents .front-box .banner span {
+    font-size: 100px;
+    font-weight: 640;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .5));
+    background: linear-gradient(to right, white 20%, orange 40%, orange 60%, white 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite forwards;
+} */
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.page-contents .front-box .banner .links {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+}
+
+.page-contents .front-box .banner .links a {
+    background-color: #98002e;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .5s ease;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+}
+
+.page-contents .front-box .banner .links a:hover {
+    color: #98002e;
+    border: 2px solid #98002e;
+    background-color: white;
+    transform: scale(1) translate(0, -5px);
+}
+
+.white-bg {
+    background-color: #fff;
+}
+
+.magenta-bg {
+    background-color: #98002e;
+}
+
+.magenta-color {
+    color: #98002e;
+}
+
+.orange-color {
+    color: #fdb714;
+}
+
+.white-color {
+    color: white;
+}
+
+main .box {
+    height: 500px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.page-contents .affiliation-content .text-box {
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 80%;
-    border-radius: 20px;
-    padding: 18px 18px 18px 25px;
-    box-shadow: -5px 5px 10px black;
-    animation: reveal 1s ease;
+main .box .image {
+    width: 30%;
+    border-radius: 19px;
+    overflow: hidden;
 }
 
-@keyframes reveal {
-    0% {
-      transform: translate(0, 50%);
-    }
-    100% {
-      transform: translate(0, 0);
-    }
+main .box .image:hover img {
+    transform: scale(1.05);
 }
 
-.page-contents .affiliation-content .text-box h1 {
-    font-family: Neuton, sans-serif;
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 50px;
-    display: inline-block;
-    position: relative;
-    cursor: default;
-}
-
-.page-contents .affiliation-content .text-box p {
-    font-family: Neuton, sans-serif;
-    font-size: 25px;
-    padding-top: 30px;
-}
-
-.page-contents .affiliation-content .text-box h1::after {
-    content: '';
-    position: absolute;
+main .box .image img {
+    height: auto;
     width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    transform-origin: right;
-    transition: transform 0.25s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
-.page-contents .affiliation-content .text-box h1:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+main .box .text {
+    width: 50%;
+}
+
+main .box h2 {
+    padding-bottom: 45px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+main .box p {
+    font-size: 20px;
 }
