@@ -1,15 +1,27 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.topnav {
+    display: none;
+    background-color: #f7eef0;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+}
+
+.topnav .logo {
+    height: 100%;
+    width: 10%;
+    background: url("/images/logo.png") center / cover no-repeat;
 }
 
 .sidenav {
     height: 100%;
-    width: 300px;
     position: fixed;
-    top: 0;
-    left: 0;
     overflow: hidden;
     background-color: #f7eef0;
 }
@@ -36,15 +48,19 @@
     background-color: #ff9f71;
 }
 
+.sidenav .links button.active:hover {
+    background-color: #ff9f71;
+}
+
 .sidenav .links .link {
     padding: 10px 10px;
+    border-radius: 6px;
     margin: 5px 0;
     transition: all .5s ease;
 }
 
 .sidenav .links .link:hover {
-    background-color: #ff9f71;
-    border-radius: 6px;
+    background-color: rgb(200, 200, 200);
 }
 
 .sidenav .links .link i {
@@ -61,9 +77,129 @@
     cursor: pointer;
 }
 
-.contents {
+.tab-content {
+    margin-left: 297px;
+    min-height: 100vh;
+    padding: 20px 0;
+    background: linear-gradient(to bottom right, #fca072, #78f6cb);
+}
+
+#dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dashboard .message {
+    height: 20%;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+}
+
+#dashboard .message .name {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#dashboard .message .name h2 {
+    font-size: 3rem;
+}
+
+#dashboard .message .name h3 {
+    font-size: 1.7rem;
+}
+
+#dashboard .message .quote {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#dashboard .message .quote h3 {
+    font-size: 1.5rem;
+}
+
+#dashboard .message .quote p {
+    font-size: 1.3rem;
+}
+
+#dashboard .message .quote i {
+    width: 100%;
+    padding: 0 10px;
+    text-align: right;
+}
+
+#dashboard .timedate {
+    height: 20%;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#dashboard .timedate .time {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#dashboard .timedate .time h2 {
+    font-size: 4rem;
+}
+
+#dashboard .timedate .date {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#dashboard .timedate .date h3 {
+    font-size: 2rem;
+}
+
+#dashboard .weather {
+    height: 20%;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+}
+
+#dashboard .weather .today {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+#dashboard .weather .today .info p {
+    font-weight: bold;
+}
+
+#dashboard .weather .forecast {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dashboard .weather .forecast .days {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* .contents {
     height: 100vh;
     margin-left: 300px;
+    border: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,10 +208,6 @@
 
 .contents .tab-content {
     display: none;
-}
-
-.contents #dashboard {
-    flex-direction: column;
 }
 
 .contents #staff {
@@ -121,7 +253,7 @@ input {
     background-color: #ff9f71;
 }
 
-.contents #staff form #submitBtn {
+.contents #staff form .Btn {
     border: 3px solid wheat;
     outline: none;
     height: auto;
@@ -137,6 +269,722 @@ input {
     transition: transform .3s ease;
 }
 
-.contents #staff form #submitBtn:hover {
+.contents #staff form .Btn:hover {
     transform: scale(1.1);
+}
+
+.contents #dashboard {
+    height: 100%;
+    width: 100%;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+
+.contents #dashboard .message {
+    width: 30%;
+    border: 2px solid black;
+}
+
+.contents #dashboard .timedate {
+    width: 30%;
+    border: 2px solid black;
+}
+
+.contents #dashboard .weather {
+    width: 30%;
+    border: 2px solid black;
+} */
+
+/* Removes arrows on input[type='number'] (Chrome, Safari, Edge, Opera) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#staff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#staff .add-staff-box {
+    position: fixed;
+    height: 70%;
+    width: 50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+}
+
+#staff .add-staff-box .header {
+    padding: 20px;
+    text-align: center;
+}
+
+#staff .add-staff-box .form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+#staff .add-staff-box .form form {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#staff .add-staff-box .form form label {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+#staff .add-staff-box .form form input {
+    font-size: 1.1rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(230, 230, 230);
+}
+
+#staff .add-staff-box .form form input:hover {
+    border: 2px solid black;
+}
+
+#staff .add-staff-box .form form input[type='file'] {
+    background-color: transparent;
+    border: none;
+}
+
+
+#staff .add-staff-box .form form input[type='file']:hover {
+    border: none;
+}
+
+#staff .add-staff-box .form form .submit-box {
+    display: flex;
+    justify-content: center;
+}
+
+#staff .add-staff-box .form form .submit-box .Btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: blue;
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#staff .add-staff-box .form form .submit-box .Btn:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+.show {
+    animation: show-box .5s ease 0s 1 normal none;
+}
+
+.hide {
+    animation: hide-box .5s ease 0s 1 normal none;
+}
+
+@keyframes show-box {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hide-box {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+#staff .add-staff-box .closeBtn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#staff .add-staff-box .closeBtn button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+#staff .add-staff-box .closeBtn button:hover {
+    transform: scale(1.5);
+}
+
+/* Edit box overlay */
+
+
+#staff .edit-staff-box {
+    position: fixed;
+    top: 15%;
+    height: 70%;
+    width: 50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+}
+
+#staff .edit-staff-box .header {
+    padding: 20px;
+    text-align: center;
+}
+
+#staff .edit-staff-box .form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+#staff .edit-staff-box .form form {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#staff .edit-staff-box .form form label {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+#staff .edit-staff-box .form form input {
+    font-size: 1.1rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(230, 230, 230);
+}
+
+#staff .edit-staff-box .form form input:hover {
+    border: 2px solid black;
+}
+
+#staff .edit-staff-box .form form input[type='file'] {
+    background-color: transparent;
+    border: none;
+}
+
+#staff .edit-staff-box .form form input[type='file']:hover {
+    border: none;
+}
+
+#staff .edit-staff-box .form form .submit-box {
+    display: flex;
+    justify-content: center;
+}
+
+#staff .edit-staff-box .form form .submit-box .Btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: blue;
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#staff .edit-staff-box .form form .submit-box .Btn:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+#staff .edit-staff-box .closeBtn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#staff .edit-staff-box .closeBtn button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+#staff .edit-staff-box .closeBtn button:hover {
+    transform: scale(1.5);
+}
+
+#staff .box {
+    height: 100%;
+    width: 100%;
+}
+
+#staff .box .top-box {
+    height: 40%;
+    padding: 20px;
+}
+
+#staff .box .top-box h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+#staff .box .top-box .info-box {
+    margin: 20px 0 0 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#staff .box .top-box .info-box a {
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: blue;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 2px 15px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all .4s ease-in-out;
+}
+
+#staff .box .top-box .info-box a:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+#staff .box .top-box .info-box .search-box {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+#staff .box .top-box .info-box .search-box input {
+    height: 100%;
+    width: 80%;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    transition: all .4s ease-in-out;
+}
+
+#staff .box .top-box .info-box .search-box button {
+    height: 100%;
+    width: 70px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+#staff .box .staff-table {
+    padding: 0 20px;
+}
+
+#staff .box .staff-table table,
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    transition: all .5s ease-in-out;
+}
+
+#staff .box .staff-table table {
+    width: 100%;
+    background-color: white;
+}
+
+/* Student tab */
+
+#student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#student .add-student-box {
+    position: fixed;
+    height: 70%;
+    width: 50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+}
+
+#student .add-student-box .header {
+    padding: 20px;
+    text-align: center;
+}
+
+#student .add-student-box .form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+#student .add-student-box .form form {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#student .add-student-box .form form label {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+#student .add-student-box .form form input {
+    font-size: 1.1rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(230, 230, 230);
+}
+
+#student .add-student-box .form form input:hover {
+    border: 2px solid black;
+}
+
+#student .add-student-box .form form input[type='file'] {
+    background-color: transparent;
+    border: none;
+}
+
+
+#student .add-student-box .form form input[type='file']:hover {
+    border: none;
+}
+
+#student .add-student-box .form form .submit-box {
+    display: flex;
+    justify-content: center;
+}
+
+#student .add-student-box .form form .submit-box .Btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: blue;
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#student .add-student-box .form form .submit-box .Btn:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+.show {
+    animation: show-box .5s ease 0s 1 normal none;
+}
+
+.hide {
+    animation: hide-box .5s ease 0s 1 normal none;
+}
+
+@keyframes show-box {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hide-box {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+#student .add-student-box .closeBtn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#student .add-student-box .closeBtn button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+#student .add-student-box .closeBtn button:hover {
+    transform: scale(1.5);
+}
+
+/* Edit box overlay */
+
+
+#student .edit-student-box {
+    position: fixed;
+    top: 15%;
+    height: 70%;
+    width: 50%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+}
+
+#student .edit-student-box .header {
+    padding: 20px;
+    text-align: center;
+}
+
+#student .edit-student-box .form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+#student .edit-student-box .form form {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#student .edit-student-box .form form label {
+    font-size: 1.2rem;
+    color: gray;
+}
+
+#student .edit-student-box .form form input {
+    font-size: 1.1rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all .3s ease-in-out;
+    background-color: rgb(230, 230, 230);
+}
+
+#student .edit-student-box .form form input:hover {
+    border: 2px solid black;
+}
+
+#student .edit-student-box .form form input[type='file'] {
+    background-color: transparent;
+    border: none;
+}
+
+#student .edit-student-box .form form input[type='file']:hover {
+    border: none;
+}
+
+#student .edit-student-box .form form .submit-box {
+    display: flex;
+    justify-content: center;
+}
+
+#student .edit-student-box .form form .submit-box .Btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: blue;
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#student .edit-student-box .form form .submit-box .Btn:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+#student .edit-student-box .closeBtn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#student .edit-student-box .closeBtn button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+#student .edit-student-box .closeBtn button:hover {
+    transform: scale(1.5);
+}
+
+#student .box {
+    height: 100%;
+    width: 100%;
+}
+
+#student .box .top-box {
+    height: 40%;
+    padding: 20px;
+}
+
+#student .box .top-box h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+#student .box .top-box .info-box {
+    margin: 20px 0 0 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#student .box .top-box .info-box a {
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: blue;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 2px 15px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all .4s ease-in-out;
+}
+
+#student .box .top-box .info-box a:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+#student .box .top-box .info-box .search-box {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+#student .box .top-box .info-box .search-box input {
+    height: 100%;
+    width: 80%;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    transition: all .4s ease-in-out;
+}
+
+#student .box .top-box .info-box .search-box button {
+    height: 100%;
+    width: 70px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+#student .box .student-table {
+    padding: 0 20px;
+}
+
+#student .box .student-table table,
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    transition: all .5s ease-in-out;
+}
+
+#student .box .student-table table {
+    width: 100%;
+    background-color: white;
 }

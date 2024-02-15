@@ -7,7 +7,7 @@ include 'config.php';
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$sql = "SELECT * FROM admin_list WHERE username = '$username' AND password = '$password'";
+$sql = "SELECT * FROM admin_list WHERE BINARY username = '$username' AND BINARY password = '$password'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
