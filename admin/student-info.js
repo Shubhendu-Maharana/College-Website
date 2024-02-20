@@ -14,7 +14,10 @@ function updateStdTable() {
 }
 
 updateStdTable();
-setInterval(updateStdTable, 2000);
+// setInterval(updateStdTable, 2000);
+document.getElementById("StdsearchInput").addEventListener("keyup", () => {
+    updateStdTable();
+})
 
 $(document).ready(function () {
     $("#stdAddForm").on("submit", function (e) {
@@ -32,6 +35,7 @@ $(document).ready(function () {
             success: function (response) {
                 $("#stdAddForm").trigger("reset");
                 $("#myModal").modal("hide");
+                updateStdTable();
                 alert(response);
             }
         });
@@ -118,6 +122,24 @@ function deleteStd(roll_no) {
     }
 }
 
+function deleteStdCreds(roll_no) {
+    if (confirm("Are you sure?")) {
+        $.ajax({
+            type: "POST",
+            url: "../server/delete_std_creds.php",
+            data: {
+                roll_no: roll_no
+            },
+            success: function (response) {
+                alert(response);
+                updateCredsTable();
+            }
+        });
+    } else {
+        return;
+    }
+}
+
 
 
 // Function to dynamically update student info table
@@ -136,7 +158,10 @@ function updateFeeTable() {
 }
 
 updateFeeTable();
-setInterval(updateFeeTable, 2000);
+// setInterval(updateFeeTable, 2000);
+document.getElementById("feeSearch").addEventListener("keyup", () => {
+    updateFeeTable();
+})
 
 $(document).ready(function () {
     $("#stdFeeForm").on("submit", function (e) {
@@ -155,6 +180,49 @@ $(document).ready(function () {
                 $("#stdFeeForm").trigger("reset");
                 $("#addFee").modal("hide");
                 updateFeeTable();
+                alert(response);
+            }
+        });
+    });
+});
+
+function updateCredsTable() {
+    let searchValue = document.getElementById("credsSearch").value;
+    $.ajax({
+        type: "GET",
+        url: "../server/getCredsData.php",
+        data: {
+            search: searchValue
+        },
+        success: function (response) {
+            $("#credsTableBody").html(response);
+        }
+    });
+}
+
+updateCredsTable();
+// setInterval(updateCredsTable, 2000);
+document.getElementById("credsSearch").addEventListener("keyup", () => {
+    updateCredsTable();
+})
+
+$(document).ready(function () {
+    $("#stdCredsForm").on("submit", function (e) {
+        e.preventDefault();
+        let formData = new FormData($("#stdCredsForm")[0]);
+
+        $.ajax({
+            url: "../server/std_creds_store.php",
+            type: "POST",
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                $("#stdCredsForm").trigger("reset");
+                $("#addStdCreds").modal("hide");
+                updateCredsTable();
                 alert(response);
             }
         });

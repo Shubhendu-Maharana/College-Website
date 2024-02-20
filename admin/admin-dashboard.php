@@ -41,6 +41,10 @@ include '../server/config.php';
                 <i class="fa-solid fa-graduation-cap"></i>
                 Student Management
             </button>
+            <button class="link" onclick="tab(event, 'stdCreds')">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Student Credentials
+            </button>
             <button class="link" onclick="tab(event, 'fees')">
                 <i class="fa-solid fa-credit-card"></i>
                 Fees
@@ -206,7 +210,7 @@ include '../server/config.php';
                                         </div>
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input required name="roll-no" type="text" class="form-control" id="roll-no" placeholder="name@example.com">
+                                                <input required name="roll-no" type="text" class="form-control" id="roll-no" placeholder="roll-no">
                                                 <label for="roll-no">Roll No</label>
                                             </div>
                                         </div>
@@ -220,12 +224,18 @@ include '../server/config.php';
                                         </div>
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input required name="course" type="text" class="form-control" id="course" placeholder="course">
-                                                <label for="course">Course</label>
+                                                <input required name="number" type="number" class="form-control" id="number" placeholder="number">
+                                                <label for="number">Contact No</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="course" type="text" class="form-control" id="course" placeholder="course">
+                                                <label for="course">Course</label>
+                                            </div>
+                                        </div>
                                         <div class="col">
                                             <div class="form-floating mb-3">
                                                 <input required name="semester" type="text" class="form-control" id="semester" placeholder="semester">
@@ -234,8 +244,8 @@ include '../server/config.php';
                                         </div>
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input required name="number" type="number" class="form-control" id="number" placeholder="number">
-                                                <label for="number">Contact No</label>
+                                                <input required name="payable" type="number" class="form-control" id="payable" placeholder="payable">
+                                                <label for="payable">Course Fee</label>
                                             </div>
                                         </div>
                                     </div>
@@ -270,126 +280,6 @@ include '../server/config.php';
 
 
                         </div>
-                    </div>
-                </div>
-                <!-- <div class="modal" id="editModal">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            
-                            <div class="modal-header">
-                                <h2 class="text-center">Edit Student Information</h2>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-
-                            
-                            <div class="modal-body" id="modalBody">
-                                <form id="stdAddForm" method="post" enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="name" type="text" class="form-control" id="name" placeholder="name" value="">
-                                                <label for="name">Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="roll-no" type="text" class="form-control" id="roll-no" placeholder="name@example.com">
-                                                <label for="roll-no">Roll No</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="age" type="number" class="form-control" id="age" placeholder="age">
-                                                <label for="age">Age</label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="course" type="text" class="form-control" id="course" placeholder="course">
-                                                <label for="course">Course</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="semester" type="text" class="form-control" id="semester" placeholder="semester">
-                                                <label for="semester">Semester</label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="number" type="number" class="form-control" id="number" placeholder="number">
-                                                <label for="number">Contact No</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="address" type="text" class="form-control" id="address" placeholder="address">
-                                                <label for="address">Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-floating mb-3">
-                                                <input required name="admission-date" type="date" class="form-control" id="admission-date" placeholder="admission-date">
-                                                <label for="admission-date">Admission Date</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form mb-3">
-                                                <label for="pfp">Profile Picture</label>
-                                                <input required name="pfp" type="file" class="form-control" id="pfp" placeholder="pfp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add Student</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            
-
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-
-            <div class="modal" id="viewStdModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">hello</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -409,6 +299,70 @@ include '../server/config.php';
             </table>
         </div>
     </div>
+    <div class="tab-content" id="stdCreds">
+        <div class="container">
+            <div class="container">
+                <h1 class="text-center p-4">Student Credentials</h1>
+            </div>
+            <div class="input-group w-50 mx-auto">
+                <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter Roll No" id="credsSearch" aria-label="Recipient's username" aria-describedby="searchBtn">
+                <button class="btn btn-primary rounded ms-2 py-2 px-4" type="button" id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addStdCreds">Add Student Credentials</button>
+
+
+                <div class="modal" id="addStdCreds">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+
+                            <div class="modal-header">
+                                <h2 class="text-center">Add Student Credentials</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+
+                            <div class="modal-body" id="modalBody">
+                                <form id="stdCredsForm" method="post" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="roll-no" type="text" class="form-control" id="roll-no" placeholder="roll-no" value="">
+                                                <label for="roll-no">Username/Roll No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="password" type="text" class="form-control" id="password" placeholder="password">
+                                                <label for="password">New Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add Credentials</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-2">
+                <thead>
+                    <tr>
+                        <th>Sl. No</th>
+                        <th>Roll No</th>
+                        <th>Password</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="credsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="tab-content" id="fees">
         <div class="container">
@@ -422,7 +376,7 @@ include '../server/config.php';
                 </button>
 
                 <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addFee">Add Fee record</button>
-                
+
                 <div class="modal" id="addFee">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -467,7 +421,7 @@ include '../server/config.php';
                                         </div>
                                     </div>
                                     <div class="row d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add Student</button>
+                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add Record</button>
                                     </div>
                                 </form>
                             </div>

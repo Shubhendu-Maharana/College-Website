@@ -10,6 +10,7 @@ $semester = $_POST['semester'];
 $number = $_POST['number'];
 $address = $_POST['address'];
 $admission_date = $_POST['admission-date'];
+$payable = $_POST['payable'];
 
 // File upload directory
 $targetDir = "student_images/";
@@ -43,6 +44,8 @@ if (in_array($fileType, $allowTypes)) {
 // }
 
 $sql = "INSERT INTO student_info (roll_no, name, age, course, semester, contact_no, address, admission_date, picture) VALUES ('$roll_no', '$name', '$age', '$course', '$semester', '$number', '$address', '$admission_date', '$profile_pic')";
+
+$conn->query("INSERT INTO student_fees (roll_no, payable) VALUES ('$roll_no', $payable)");
 
 if ($conn->query($sql) === TRUE) {
     echo "Student information successfully inserted";

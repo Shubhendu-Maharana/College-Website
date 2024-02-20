@@ -15,7 +15,7 @@ function updateTable() {
 
 // Retriving staff info reapetedly after 5 seconds
 updateTable();
-setInterval(updateTable, 2000);
+// setInterval(updateTable, 2000);
 
 // Function to show add staff info card
 const overlay = document.getElementById("overlay");
