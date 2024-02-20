@@ -10,7 +10,7 @@ if($conn->connect_error) {
 
 $response = array();
 
-$sql = "SELECT * FROM staff_info WHERE qualification = 'bca'";
+$sql = "SELECT * FROM staff_info";
 $result = $conn->query($sql);
 
 if (!$result) {

@@ -3,9 +3,9 @@ include '../server/config.php';
 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
-$sql = "SELECT * FROM student_info";
+$sql = "SELECT * FROM student_info ORDER BY roll_no";
 if (!empty($search)) {
-    $sql .= " WHERE name LIKE '$search%'";
+    $sql = "SELECT * FROM student_info WHERE name LIKE '$search%' ORDER BY name";
 }
 
 $result = $conn->query($sql);
@@ -17,11 +17,13 @@ if ($result->num_rows > 0) {
             <tr>
                 <td>" . ++$slno . "</td>
                 <td>" . $row["name"] . "</td>
-                <td>" . $row["class"] . "</td>
-                <td>" . $row["age"] . "</td>
+                <td>" . $row["roll_no"] . "</td>
+                <td>" . $row["course"] . "</td>
+                <td>" . $row["semester"] . "</td>
                 <td>
-                    <span style='cursor: pointer; color: blue' onclick=\"edit_std_show('" . $row['name'] . "', '" . $row['age'] . "', '" . $row["class"] . "')\">View/Edit</span>
+                    <button class='btn btn-danger' onclick=\"deleteStd('" . $row['roll_no'] . "')\">Delete</button>
                 </td>
+
             </tr>
         ";
     }
@@ -34,3 +36,4 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
+?>

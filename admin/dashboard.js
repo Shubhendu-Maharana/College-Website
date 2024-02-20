@@ -20,7 +20,7 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", function () {
     tab(event, 'dashboard');
     document.getElementById("first").className += " active";
-})
+});
 function tab(evt, ele) {
     let i, tabcontent, tablink;
 

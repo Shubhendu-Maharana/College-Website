@@ -4,15 +4,15 @@ session_start();
 
 include 'config.php';
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-$sql = "SELECT * FROM admin_list WHERE BINARY username = '$username' AND BINARY password = '$password'";
+$sql = "SELECT * FROM student_credentials WHERE BINARY roll_no = '$username' AND BINARY password = '$password'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
-    $_SESSION['admin'] = $username;
-    $out[] = "../admin/admin-dashboard.php";
+    $_SESSION['roll_no'] = $username;
+    $out[] = "student-dashboard.php";
     $out[] = 1;
     echo json_encode($out);
 } else {
@@ -22,3 +22,5 @@ if ($result->num_rows == 1) {
 }
 
 $conn->close();
+
+?>

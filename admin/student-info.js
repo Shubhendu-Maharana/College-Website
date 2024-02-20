@@ -1,17 +1,38 @@
+// Function to dynamically update student info table
+function updateStdTable() {
+    let searchValue = document.getElementById("StdsearchInput").value;
+    $.ajax({
+        type: "GET",
+        url: "getstdData.php",
+        data: {
+            search: searchValue
+        },
+        success: function (response) {
+            $("#StdtableBody").html(response);
+        }
+    });
+}
+
+updateStdTable();
+setInterval(updateStdTable, 2000);
+
 $(document).ready(function () {
-    $("#student").on("submit", ".add-student-box .form form", function (e) {
+    $("#stdAddForm").on("submit", function (e) {
         e.preventDefault();
-        let form = this;
+        let formData = new FormData($("#stdAddForm")[0]);
+
         $.ajax({
-            type: "POST",
             url: "../server/student_store.php",
-            data: new FormData(this),
+            type: "POST",
+            data: formData,
+            async: false,
+            cache: false,
             contentType: false,
             processData: false,
             success: function (response) {
+                $("#stdAddForm").trigger("reset");
+                $("#myModal").modal("hide");
                 alert(response);
-                $(form).trigger("reset");
-                hide_student_box();
             }
         });
     });
@@ -58,54 +79,83 @@ function edit_std_hide() {
 }
 
 
+
+// $(document).ready(function () {
+//     $("#edit_student").on("submit", function (e) {
+//         e.preventDefault();
+//         let form = this;
+//         $.ajax({
+//             type: "POST",
+//             url: "../server/edit_student.php",
+//             data: new FormData(this),
+//             contentType: false,
+//             processData: false,
+//             success: function (response) {
+//                 alert(response);
+//                 $(form).trigger("reset");
+//                 updateStdTable();
+//                 edit_std_hide();
+//             }
+//         });
+//     });
+// });
+
+function deleteStd(roll_no) {
+    if (confirm("Are you sure?")) {
+        $.ajax({
+            type: "POST",
+            url: "../server/delete_student.php",
+            data: {
+                roll_no: roll_no
+            },
+            success: function (response) {
+                alert(response);
+                updateStdTable();
+            }
+        });
+    } else {
+        return;
+    }
+}
+
+
+
 // Function to dynamically update student info table
-function updateStdTable() {
-    let searchValue = document.getElementById("StdsearchInput").value;
+function updateFeeTable() {
+    let searchValue = document.getElementById("feeSearch").value;
     $.ajax({
         type: "GET",
-        url: "getstdData.php",
+        url: "../server/getFeeData.php",
         data: {
             search: searchValue
         },
         success: function (response) {
-            $("#StdtableBody").html(response);
+            $("#feeTableBody").html(response);
         }
     });
 }
 
-updateStdTable();
-setInterval(updateStdTable, 2000);
+updateFeeTable();
+setInterval(updateFeeTable, 2000);
 
 $(document).ready(function () {
-    $("#edit_student").on("submit", function (e) {
+    $("#stdFeeForm").on("submit", function (e) {
         e.preventDefault();
-        let form = this;
+        let formData = new FormData($("#stdFeeForm")[0]);
+
         $.ajax({
+            url: "../server/std_fee_store.php",
             type: "POST",
-            url: "../server/edit_student.php",
-            data: new FormData(this),
+            data: formData,
+            async: false,
+            cache: false,
             contentType: false,
             processData: false,
             success: function (response) {
+                $("#stdFeeForm").trigger("reset");
+                $("#addFee").modal("hide");
+                updateFeeTable();
                 alert(response);
-                $(form).trigger("reset");
-                updateStdTable();
-                edit_std_hide();
-            }
-        });
-    });
-});
-
-$(document).ready(function () {
-    $("#StddeleteBtn").click(function () {
-        $.ajax({
-            type: "POST",
-            url: "../server/delete_student.php",
-            data: $("#edit_student").serialize(),
-            success: function (response) {
-                alert(response);
-                updateTable();
-                edit_hide();
             }
         });
     });

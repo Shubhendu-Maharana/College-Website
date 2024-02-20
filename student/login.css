@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
+    background-color: #ad99ff;
+    background-image:
+        radial-gradient(at 22% 38%, hsla(1, 65%, 69%, 1) 0px, transparent 50%),
+        radial-gradient(at 7% 46%, hsla(329, 70%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 82% 46%, hsla(286, 72%, 76%, 1) 0px, transparent 50%),
+        radial-gradient(at 32% 49%, hsla(26, 88%, 71%, 1) 0px, transparent 50%),
+        radial-gradient(at 54% 2%, hsla(168, 72%, 66%, 1) 0px, transparent 50%),
+        radial-gradient(at 52% 15%, hsla(4, 74%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 93% 93%, hsla(336, 71%, 77%, 1) 0px, transparent 50%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 700px;
+    padding: 20px;
+}
+
+.box .heading {
+    text-align: center;
+}
+
+.form-control {
+    border: none;
+    outline: none;
+}
+
+.box .btn {
+    padding: 10px 20px;
+    border: 2px solid #0d6efd;
+    transition: all .2s ease-in-out;
+}
+
+.box .btn:hover {
+    border: 2px solid #0d6efd;
+    background-color: transparent;
+    color: #0d6efd;
+}

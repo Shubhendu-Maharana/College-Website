@@ -647,7 +647,7 @@ td {
 
 /* Student tab */
 
-#student {
+/* #student {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -790,7 +790,7 @@ td {
     transform: scale(1.5);
 }
 
-/* Edit box overlay */
+Edit box overlay
 
 
 #student .edit-student-box {
@@ -987,4 +987,4 @@ td {
 #student .box .student-table table {
     width: 100%;
     background-color: white;
-}
+} */

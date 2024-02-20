@@ -1,9 +1,9 @@
 <?php
 
 include 'config.php';
-$name = $_POST['currname'];
+$roll_no = $_POST['roll_no'];
 
-$sql = "DELETE FROM student_info WHERE name = '$name'";
+$sql = "DELETE FROM student_info WHERE roll_no = '$roll_no'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Student information deleted successfully";
