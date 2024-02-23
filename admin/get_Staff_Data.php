@@ -17,10 +17,11 @@ if ($result->num_rows > 0) {
             <tr>
                 <td>" . ++$slno . "</td>
                 <td>" . $row["name"] . "</td>
-                <td>" . $row["qualification"] . "</td>
                 <td>" . $row["age"] . "</td>
+                <td>" . $row["expertise"] . "</td>
+                <td>" . $row["join_date"] . "</td>
                 <td>
-                    <span style='cursor: pointer; color: blue' onclick=\"edit_show('" . $row['name'] . "', '" . $row['age'] . "', '" . $row["qualification"] . "')\">View/Edit</span>
+                    <button class='btn btn-danger' onclick=\"deleteStaff('" . $row['name'] . "')\">Delete</button>
                 </td>
             </tr>
         ";
@@ -28,7 +29,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "
         <tr>
-            <td colspan='5'>No data available</td>
+            <td colspan='6'>No data available</td>
         <tr>
     ";
 }

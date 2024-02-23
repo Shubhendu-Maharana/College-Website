@@ -2,15 +2,9 @@
 
 include 'config.php';
 
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 $response = array();
 
-$sql = "SELECT * FROM staff_info WHERE qualification = 'diploma'";
+$sql = "SELECT * FROM staff_info";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -22,7 +16,7 @@ if (!$result) {
         $staff_info[] = array(
             'name' => $row['name'],
             'age' => $row['age'],
-            'qual' => $row['qualification']
+            'expertise' => $row['expertise']
         );
     }
 
@@ -35,3 +29,5 @@ $conn->close();
 
 header('Content-Type: application/json');
 echo json_encode($response);
+
+?>

@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-$name = $_POST['currname'];
+$name = $_POST['name'];
 
 $sql = "DELETE FROM staff_info WHERE name = '$name'";
 

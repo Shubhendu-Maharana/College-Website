@@ -23,6 +23,9 @@ if ($result->num_rows > 0) {
                 <td>" . $row["remark"] . "</td>
                 <td>&#8377;" . number_format($row['payment_amt']) . "</td>
                 <td>" . $row['payment_date'] . "</td>
+                <td>
+                    <button class='btn btn-danger' onclick=\"deleteStdfee('" . $row['roll_no'] . "', '" . $row['payment_amt'] . "')\">Delete</button>
+                </td>
             </tr>
         ";
     }

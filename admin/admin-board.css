@@ -103,7 +103,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 #dashboard .message .name h2 {
@@ -136,9 +136,8 @@
 }
 
 #dashboard .timedate {
-    height: 20%;
     width: 80%;
-    padding: 20px;
+    padding: 5px 0;
     display: flex;
     align-items: center;
 }
@@ -168,7 +167,7 @@
 #dashboard .weather {
     height: 20%;
     width: 80%;
-    padding: 20px;
+    padding: 5px 0;
     display: flex;
 }
 
@@ -303,7 +302,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-#staff {
+/* #staff {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -393,7 +392,7 @@ input::-webkit-inner-spin-button {
     background-color: white;
     color: blue;
     border: 2px solid blue;
-}
+} */
 
 .show {
     animation: show-box .5s ease 0s 1 normal none;
@@ -404,29 +403,22 @@ input::-webkit-inner-spin-button {
 }
 
 @keyframes show-box {
-    0% {
+    from {
         opacity: 0;
-        transform: scale(0);
-    }
-
-    100% {
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+      50% {
         opacity: 1;
-        transform: scale(1);
-    }
+      }
 }
 
 @keyframes hide-box {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    100% {
+    to {
         opacity: 0;
-        transform: scale(0.6);
-    }
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
 }
-
+/*
 #staff .add-staff-box .closeBtn {
     position: fixed;
     top: 30px;
@@ -445,9 +437,6 @@ input::-webkit-inner-spin-button {
 #staff .add-staff-box .closeBtn button:hover {
     transform: scale(1.5);
 }
-
-/* Edit box overlay */
-
 
 #staff .edit-staff-box {
     position: fixed;
@@ -643,7 +632,7 @@ td {
 #staff .box .staff-table table {
     width: 100%;
     background-color: white;
-}
+} */
 
 /* Student tab */
 

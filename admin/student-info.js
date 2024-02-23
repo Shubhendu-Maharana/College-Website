@@ -140,6 +140,44 @@ function deleteStdCreds(roll_no) {
     }
 }
 
+function deleteStdmark(roll_no, exam_name) {
+    if (confirm("Are you sure?")) {
+        $.ajax({
+            type: "POST",
+            url: "../server/delete_std_marks.php",
+            data: {
+                roll_no: roll_no,
+                exam_name: exam_name
+            },
+            success: function (response) {
+                alert(response);
+                updateExamTable();
+            }
+        });
+    } else {
+        return;
+    }
+}
+
+function deleteStdfee(roll_no, payment_amt) {
+    if (confirm("Are you sure?")) {
+        $.ajax({
+            type: "POST",
+            url: "../server/delete_std_fee.php",
+            data: {
+                roll_no: roll_no,
+                payment_amt: payment_amt
+            },
+            success: function (response) {
+                alert(response);
+                updateFeeTable();
+            }
+        });
+    } else {
+        return;
+    }
+}
+
 
 
 // Function to dynamically update student info table
@@ -228,3 +266,46 @@ $(document).ready(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    $("#stdMarkForm").on("submit", function (e) {
+        e.preventDefault();
+        let formData = new FormData($("#stdMarkForm")[0]);
+
+        $.ajax({
+            url: "../server/std_marks_store.php",
+            type: "POST",
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                $("#stdMarkForm").trigger("reset");
+                $("#addMark").modal("hide");
+                updateExamTable();
+                alert(response);
+            }
+        });
+    });
+});
+
+function updateExamTable() {
+    let searchValue = document.getElementById("examSearch").value;
+    $.ajax({
+        type: "GET",
+        url: "../server/getExamData.php",
+        data: {
+            search: searchValue
+        },
+        success: function (response) {
+            $("#examTableBody").html(response);
+        }
+    });
+}
+
+updateExamTable();
+// setInterval(updateExamTable, 2000);
+document.getElementById("examSearch").addEventListener("keyup", () => {
+    updateExamTable();
+})

@@ -45,6 +45,10 @@ include '../server/config.php';
                 <i class="fa-solid fa-graduation-cap"></i>
                 Student Credentials
             </button>
+            <button class="link" onclick="tab(event, 'examMarks')">
+                <i class="fa-solid fa-marker"></i>
+                Exam Marks
+            </button>
             <button class="link" onclick="tab(event, 'fees')">
                 <i class="fa-solid fa-credit-card"></i>
                 Fees
@@ -84,7 +88,7 @@ include '../server/config.php';
         </div>
     </div>
 
-    <div class="tab-content" id="staff">
+    <!-- <div class="tab-content" id="staff">
 
         <div id="edit-overlay" class="edit-staff-box">
             <div class="closeBtn">
@@ -173,6 +177,82 @@ include '../server/config.php';
                 </table>
             </div>
         </div>
+    </div> -->
+    <div class="tab-content" id="staff">
+        <div class="container">
+            <div class="container">
+                <h1 class="text-center p-4">Staff Information</h1>
+            </div>
+            <div class="input-group w-50 mx-auto">
+                <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter name" id="StaffsearchInput" aria-label="Recipient's username" aria-describedby="searchBtn">
+
+                <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#staffModal">Add New Staff</button>
+
+                <div class="modal" id="staffModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h2 class="text-center">Add Staff Information</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body" id="modalBody">
+                                <form id="staffAddForm" method="post" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="name" type="text" class="form-control" id="name" placeholder="name">
+                                                <label for="name">Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="age" type="number" class="form-control" id="age" placeholder="age">
+                                                <label for="age">Age</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="expertise" type="text" class="form-control" id="expertise" placeholder="expertise">
+                                                <label for="expertise">Expertise</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="join_date" type="date" class="form-control" id="join_date" placeholder="join_date">
+                                                <label for="join_date">Date of Join</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add Staff</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-2">
+                <thead>
+                    <tr>
+                        <th>Sl. No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Expertise</th>
+                        <th>Date of Join</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="StafftableBody"></tbody>
+            </table>
+        </div>
     </div>
 
     <div class="tab-content" id="student">
@@ -182,9 +262,6 @@ include '../server/config.php';
             </div>
             <div class="input-group w-50 mx-auto">
                 <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter name" id="StdsearchInput" aria-label="Recipient's username" aria-describedby="searchBtn">
-                <button class="btn btn-primary rounded ms-2 py-2 px-4" type="button" id="searchBtn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
 
                 <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#myModal">Add New Student</button>
 
@@ -306,9 +383,6 @@ include '../server/config.php';
             </div>
             <div class="input-group w-50 mx-auto">
                 <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter Roll No" id="credsSearch" aria-label="Recipient's username" aria-describedby="searchBtn">
-                <button class="btn btn-primary rounded ms-2 py-2 px-4" type="button" id="searchBtn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
 
                 <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addStdCreds">Add Student Credentials</button>
 
@@ -371,9 +445,6 @@ include '../server/config.php';
             </div>
             <div class="input-group w-50 mx-auto">
                 <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter name" id="feeSearch" aria-label="Recipient's username" aria-describedby="searchBtn">
-                <button class="btn rounded ms-2 btn-primary py-2 px-4" type="button" id="searchBtn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
 
                 <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addFee">Add Fee record</button>
 
@@ -439,9 +510,95 @@ include '../server/config.php';
                         <th>Remark</th>
                         <th>Amount</th>
                         <th>Date</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody id="feeTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-content" id="examMarks">
+        <div class="container">
+            <div class="container">
+                <h1 class="text-center p-4">Student Marks</h1>
+            </div>
+            <div class="input-group w-50 mx-auto">
+                <input type="text" class="form-control rounded px-3 fs-5" placeholder="Enter name" id="examSearch" aria-label="Recipient's username" aria-describedby="searchBtn">
+
+                <button class="btn rounded btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#addMark">Add Exam & Marks</button>
+
+                <div class="modal" id="addMark">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h2 class="text-center">Add Marks</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body" id="modalBody">
+                                <form id="stdMarkForm" method="post" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="roll-no" type="text" class="form-control" id="roll-no" placeholder="name@example.com">
+                                                <label for="roll-no">Roll No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="exam_name" type="text" class="form-control" id="exam_name" placeholder="exam_name">
+                                                <label for="exam_name">Exam Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="mark" type="number" class="form-control" id="mark" placeholder="mark">
+                                                <label for="mark">Secured marks</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="full_marks" type="number" class="form-control" id="full_marks" placeholder="full_marks">
+                                                <label for="full_marks">Full marks</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input required name="exam_date" type="date" class="form-control" id="exam_date" placeholder="exam_date">
+                                                <label for="exam_date">Exam Date</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary w-auto" id="addStdBtn">Add exam info</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-3">
+                <thead>
+                    <tr>
+                        <th>Sl. No</th>
+                        <th>Roll No</th>
+                        <th>Exam Date</th>
+                        <th>Exam Name</th>
+                        <th>Secured marks</th>
+                        <th>Full marks</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="examTableBody"></tbody>
             </table>
         </div>
     </div>
