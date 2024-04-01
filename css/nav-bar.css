@@ -121,7 +121,7 @@ header .header-main .links li {
     font-family: sans-serif;
     font-weight: bold;
     position: relative;
-    cursor: default;
+    cursor: pointer;
 }
 
 header .header-main .links li span {
